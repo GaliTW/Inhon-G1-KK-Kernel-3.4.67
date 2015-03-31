@@ -584,6 +584,9 @@ int mt_mt65xx_led_set_cust(struct cust_mt65xx_led *cust, int level)
 				}
 			return ((cust_brightness_set)(cust->data))(level, bl_div_hal);
 				
+			case MT65XX_LED_MODE_CUST:
+			return ((cust_set_brightness)(cust->data))(level);
+				
 			case MT65XX_LED_MODE_NONE:
 			default:
 				break;

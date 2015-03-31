@@ -66,16 +66,17 @@
 #define AMI304_DEV_NAME         "ami304"
 #define DRIVER_VERSION          "1.0.6.11"
 /*----------------------------------------------------------------------------*/
-#define AMI304_AXIS_X            0
-#define AMI304_AXIS_Y            1
-#define AMI304_AXIS_Z            2
-#define AMI304_AXES_NUM          3
+#define AMI304_AXIS_X           0
+#define AMI304_AXIS_Y           1
+#define AMI304_AXIS_Z           2
+#define AMI304_AXES_NUM         3
 /*----------------------------------------------------------------------------*/
-#define MSE_TAG                  "MSENSOR"
-#define MSE_FUN(f)               printk(KERN_INFO MSE_TAG" %s\r\n", __FUNCTION__)
-#define MSE_ERR(fmt, args...)    printk(KERN_ERR MSE_TAG" %s %d : \r\n"fmt, __FUNCTION__, __LINE__, ##args)
-#define MSE_LOG(fmt, args...)    printk(KERN_INFO MSE_TAG fmt, ##args)
+#define MSE_TAG                 "[MSENSOR] "
+#define MSE_FUN(f)              printk(KERN_ERR MSE_TAG"%s\n", __FUNCTION__)
+#define MSE_ERR(fmt, args...)   printk(KERN_ERR MSE_TAG"%s %d : "fmt, __FUNCTION__, __LINE__, ##args)
+#define MSE_LOG(fmt, args...)   printk(KERN_ERR MSE_TAG fmt, ##args)
 #define MSE_VER(fmt, args...)   ((void)0)
+
 static DECLARE_WAIT_QUEUE_HEAD(data_ready_wq);
 static DECLARE_WAIT_QUEUE_HEAD(open_wq);
 
@@ -844,7 +845,10 @@ static long ami304_unlocked_ioctl(struct file *file, unsigned int cmd,
 				MSE_ERR("IO parameter pointer is NULL!\r\n");
 				break;    
 			}
-			AMI304_ReadSensorData(strbuf, AMI304_BUFSIZE);
+			AMI304_ReadSensorData(strbuf, AMI304_BUFSIZE) ;
+			
+			// MSE_LOG( "rv = %d, buf = %s", rv, strbuf );
+			
 			if(copy_to_user(data, strbuf, strlen(strbuf)+1))
 			{
 				retval = -EFAULT;
@@ -1310,6 +1314,8 @@ static int ami304_i2c_probe(struct i2c_client *client, const struct i2c_device_i
 	struct ami304_i2c_data *data;
 	int err = 0;
 	struct hwmsen_object sobj_m, sobj_o;
+
+	MSE_FUN() ;
 
 	if (!(data = kmalloc(sizeof(struct ami304_i2c_data), GFP_KERNEL)))
 	{

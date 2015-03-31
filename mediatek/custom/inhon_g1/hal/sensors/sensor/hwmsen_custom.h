@@ -52,7 +52,37 @@
 #ifndef __HWMSEN_CUSTOM_H__ 
 #define __HWMSEN_CUSTOM_H__
 
-#define MAX_NUM_SENSORS                 5
+#define MAX_NUM_SENSORS                 6
+
+#define MSENSOR_LIB
+/*---If only needed when Msensor have library--------------------------------------*/
+#define MSENSOR_DAEMON_NAME             "ami304d"
+#define MSENSOR_DAEMON_PROP             "init.svc.ami304d"
+/*---------------------------------------------------------------------------*/
+
+#ifdef CUSTOM_KERNEL_ACCELEROMETER
+	#define ACCELEROMETER 		"MPU6050 3-axis Accelerometer"
+	#define ACCELEROMETER_VENDER 	"The Android Open Source Project"
+#endif
+
+#ifdef CUSTOM_KERNEL_ALSPS
+	#define PROXIMITY 		"TMD2771 Proximity Sensor"
+	#define PROXIMITY_VENDER 	"TAOS"
+	#define LIGHT 			"TMD2771 Light Senso"
+	#define LIGHT_VENDER 		"TAOS"
+#endif
+
+#ifdef CUSTOM_KERNEL_MAGNETOMETER
+	#define MAGNETOMETER 		"AMI306 3-axis Magnetic Field senso"
+	#define MAGNETOMETER_VENDER 	"Aichi Steel"
+	#define ORIENTATION 		"Orientation sensor"
+	#define ORIENTATION_VENDER 	"Google Inc."
+#endif
+
+#ifdef CUSTOM_KERNEL_GYROSCOPE
+	#define GYROSCOPE 		"MPU6050 gyroscope Sensor"
+	#define GYROSCOPE_VENDER 	"Invensensor"
+#endif
 
 #endif
 

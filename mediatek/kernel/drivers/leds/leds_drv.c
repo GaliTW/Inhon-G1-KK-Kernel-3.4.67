@@ -586,6 +586,14 @@ static void mt65xx_leds_shutdown(struct platform_device *pdev)
 		    case MT65XX_LED_MODE_CUST_LCM:
 				LEDS_DRV_DEBUG("[LED]backlight control through LCM!!1\n");
 			    ((cust_brightness_set)(g_leds_data[i]->cust.data))(0, bl_div);
+
+                break;
+
+		    case MT65XX_LED_MODE_CUST:
+				LEDS_DRV_DEBUG("[LED]backlight control through CUST!!1\n");
+			    ((cust_set_brightness)(g_leds_data[i]->cust.data))(0);
+
+
                 break;
             case MT65XX_LED_MODE_CUST_BLS_PWM:
 				LEDS_DRV_DEBUG("[LED]backlight control through BLS!!1\n");

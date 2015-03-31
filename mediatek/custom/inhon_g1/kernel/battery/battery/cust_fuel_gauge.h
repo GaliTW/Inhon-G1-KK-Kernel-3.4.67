@@ -12,7 +12,7 @@
 #define BATTERY_VOLTAGE_MINIMUM         3400
 #define BATTERY_VOLTAGE_MAXIMUM         4200
 
-#define BATTERY_CAPACITY_MAXIMUM        1600 // CM for ZTE v970
+#define BATTERY_CAPACITY_MAXIMUM        1400 // CM for ZTE v970
 
 #define TEMPERATURE_T0                  110
 #define TEMPERATURE_T1                  0
@@ -20,7 +20,7 @@
 #define TEMPERATURE_T3                  50
 #define TEMPERATURE_T                   255 // This should be fixed, never change the value
 
-#define BATT_CAPACITY                   1600 // CM for ZTE v970
+#define BATT_CAPACITY                   1400 // CM for ZTE v970
 
 #define ENABLE_SW_COULOMB_COUNTER       0 // 1 is enable, 0 is disable
 //#define ENABLE_SW_COULOMB_COUNTER     1 // 1 is enable, 0 is disable
@@ -52,15 +52,15 @@
 //#define R_FG_BOARD_SLOPE	1075 //slope
 #endif
 
-#define Q_MAX_POS_50	1611
-#define Q_MAX_POS_25	1600
-#define Q_MAX_POS_0	1493
-#define Q_MAX_NEG_10	1422
+#define Q_MAX_POS_50	1409
+#define Q_MAX_POS_25	1400
+#define Q_MAX_POS_0	1306
+#define Q_MAX_NEG_10	1244
 
-#define Q_MAX_POS_50_H_CURRENT	1585
-#define Q_MAX_POS_25_H_CURRENT	1554
-#define Q_MAX_POS_0_H_CURRENT	1349
-#define Q_MAX_NEG_10_H_CURRENT	733
+#define Q_MAX_POS_50_H_CURRENT	1387
+#define Q_MAX_POS_25_H_CURRENT	1360
+#define Q_MAX_POS_0_H_CURRENT	1180
+#define Q_MAX_NEG_10_H_CURRENT	641
 
 #define R_FG_VALUE 			20 // mOhm, base is 20
 #define CURRENT_DETECT_R_FG		100  //10mA

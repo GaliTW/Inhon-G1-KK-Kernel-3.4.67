@@ -28,10 +28,10 @@ typedef struct{
 }VBAT_TO_PERCENT;
 
 /* Battery Temperature Protection */
-#define MAX_CHARGE_TEMPERATURE  50
+#define MAX_CHARGE_TEMPERATURE  60
 #define MIN_CHARGE_TEMPERATURE  -13
 #define ERR_CHARGE_TEMPERATURE  0xFF
-#define MAX_BATT_TEMPERATURE	55
+#define MAX_BATT_TEMPERATURE	65
 
 /* Recharging Battery Voltage */
 #define RECHARGING_VOLTAGE      4110
@@ -90,8 +90,8 @@ VBAT_TO_PERCENT Batt_VoltToPercent_Table[] = {
 
 //#define BAT_NTC_TSM_1	  	   
 //#define BAT_NTC_10_SEN_1	    
-//#define BAT_NTC_10		   1 // 1:ON , 0:OFF
-#define BAT_NTC_47		   1 // 1:ON , 0:OFF
+#define BAT_NTC_10		   1 // 1:ON , 0:OFF
+//#define BAT_NTC_47		   1 // 1:ON , 0:OFF
 
 /* Battery Notify */
 #define BATTERY_NOTIFY_CASE_0001

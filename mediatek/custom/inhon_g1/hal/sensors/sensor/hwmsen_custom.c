@@ -56,46 +56,48 @@
 
 struct sensor_t sSensorList[MAX_NUM_SENSORS] = 
 {
+#if 0
 	{ 
-		.name		= "mmc328xma Orientation sensor",
-		.vendor 	= "mmc",
+		.name		= "Orientation sensor",
+		.vendor 	= "Google Inc.",
 		.version	= 1,
 		.handle 	= ID_ORIENTATION,
 		.type		= SENSOR_TYPE_ORIENTATION,
 		.maxRange	= 360.0f,
-		.resolution	= 1.0f,
-		.power		= 0.25f,
+		.resolution	= 0.00390625f,
+		.power		= 6.48f,
 		.reserved	= {}
 	},
+#endif
 
 	{ 
-		.name		= "mmc328xma 3-axis Magnetic Field sensor",
-		.vendor 	= "mmc",
+		.name		= "AMI306 3-axis Magnetic Field sensor",
+		.vendor 	= "Aichi Steel",
 		.version	= 1,
 		.handle 	= ID_MAGNETIC,
 		.type		= SENSOR_TYPE_MAGNETIC_FIELD,
-		.maxRange	= 600.0f,
-		.resolution	= 0.0016667f,
+		.maxRange	= 1200.0f,
+		.resolution	= 0.0033334f,
 		.power		= 0.25f,
 		.reserved	= {}
 	}, 
 
 	
 	{  
-		.name		= "mma8452q 3-axis Accelerometer",
+		.name		= "MPU6050 3-axis Accelerometer",
 		.vendor 	= "The Android Open Source Project",
 		.version	= 1,
 		.handle 	= ID_ACCELEROMETER,
 		.type		= SENSOR_TYPE_ACCELEROMETER,
 		.maxRange	= 32.0f,
-		.resolution	= 4.0f/1024.0f,
+		.resolution	= 1.0f/2048.0f,
 		.power		= 130.0f/1000.0f,
 		.reserved	= {}
 	},		  
 
 	{ 
-		.name		= "tmd2771 Proximity Sensor",
-		.vendor 	= "Capella",
+		.name		= "TMD2771 Proximity Sensor",
+		.vendor 	= "TAOS",
 		.version	= 1,
 		.handle 	= ID_PROXIMITY,
 		.type		= SENSOR_TYPE_PROXIMITY,
@@ -106,8 +108,8 @@ struct sensor_t sSensorList[MAX_NUM_SENSORS] =
 	},
 
 	{ 
-		.name		= "tmd2771 Light Sensor",
-		.vendor 	= "Capella",
+		.name		= "TMD2771 Light Sensor",
+		.vendor 	= "TAOS",
 		.version	= 1,
 		.handle 	= ID_LIGHT,
 		.type		= SENSOR_TYPE_LIGHT,
@@ -118,13 +120,13 @@ struct sensor_t sSensorList[MAX_NUM_SENSORS] =
 	},
 
 	{ 
-		.name		= "l3g4200d gyroscope Sensor",
+		.name		= "MPU6050 gyroscope Sensor",
 		.vendor 	= "Invensensor",
 		.version	= 1,
 		.handle 	= ID_GYROSCOPE,
 		.type		= SENSOR_TYPE_GYROSCOPE,
-		.maxRange	= 34.91f,
-		.resolution	= 0.0107f,
+		.maxRange	= 17.45f,
+		.resolution	= 0.000532113f,
 		.power		= 6.1f,
 		.reserved	= {}
 	}

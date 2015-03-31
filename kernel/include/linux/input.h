@@ -447,6 +447,7 @@ struct input_keymap_entry {
 #define KEY_KBDILLUMDOWN	229
 #define KEY_KBDILLUMUP		230
 
+#define KEY_CALL		231
 #define KEY_SEND		231	/* AC Send */
 #define KEY_REPLY		232	/* AC Reply */
 #define KEY_FORWARDMAIL		233	/* AC Forward Msg */

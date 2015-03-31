@@ -1286,6 +1286,23 @@ struct platform_device hwmon_sensor = {
 	.name	       = "hwmsensor",
 	.id            = -1,
 };
+/* batch dev */
+struct platform_device batch_device = {
+	.name	       = "m_batch_pl",
+	.id            = -1,
+};
+struct platform_device acc_sensor = {
+	.name	       = "m_acc_pl",
+	.id            = -1,
+};
+struct platform_device mag_sensor = {
+	.name	       = "m_mag_pl",
+	.id            = -1,
+};
+struct platform_device gyro_sensor = {
+	.name	       = "m_gyro_pl",
+	.id            = -1,
+};
 /*=======================================================================*/
 /* MT6577 ISP                                                            */
 /*=======================================================================*/
@@ -1636,6 +1653,26 @@ __init int mt_board_init(void)
 
 	retval = platform_device_register(&hwmon_sensor);
 	printk("hwmon_sensor device!");
+	if (retval != 0)
+		return retval;
+
+	retval = platform_device_register(&batch_device);
+	printk("batch_device device!");
+	if (retval != 0)
+		return retval;
+
+	retval = platform_device_register(&acc_sensor);
+	printk("acc_sensor device!");
+	if (retval != 0)
+		return retval;
+
+	retval = platform_device_register(&mag_sensor);
+	printk("mag_sensor device!");
+	if (retval != 0)
+		return retval;
+
+	retval = platform_device_register(&gyro_sensor);
+	printk("gyro_sensor device!");
 	if (retval != 0)
 		return retval;
 
